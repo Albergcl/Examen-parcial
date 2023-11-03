@@ -4,7 +4,7 @@ import ContactoModel from "../db/contacto.ts";
 const addContacto = async(req: Request, res: Response) => {
     try{
         const { dni, nombre, apellidos, email, codigoPostal, codigoIso } = req.body;
-        if(!dni || !nombre || ! apellidos || ! email || ! codigoPostal || ! codigoIso){
+        if(!dni || !nombre || !apellidos || !email || !codigoPostal || !codigoIso){
             res.status(400).send("Se requieren todos los datos");
             return;
         }

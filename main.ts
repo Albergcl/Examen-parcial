@@ -1,6 +1,7 @@
 import express from "npm:express@4.18.2";
 import mongoose from "npm:mongoose@7.6.3";
 
+import getAllContactos from "./resolvers/getAllContactos.ts";
 import getContacto from "./resolvers/getContacto.ts";
 import addContacto from "./resolvers/addContacto.ts";
 import updateContacto from "./resolvers/updateContacto.ts";
@@ -20,6 +21,7 @@ await mongoose.connect(MONGO_URL);
 const app = express();
 app.use(express.json());
 app
+    .get("/api/contactos", getAllContactos)
     .get("/api/contactos/:dni", getContacto)
     .post("/api/contactos", addContacto)
     .put("/api/contactos/:dni", updateContacto)
