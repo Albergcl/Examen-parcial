@@ -4,5 +4,6 @@ export type Contacto = {
     apellidos: string,
     email: string,
     codigoPostal: number,
-    codigoIso: string
+    codigoIso: string,
+    id: string
 }
